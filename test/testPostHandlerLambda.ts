@@ -4,7 +4,7 @@ import {Handler, Context, APIGatewayEvent, APIGatewayProxyResult} from 'aws-lamb
 const event: any = {
   httpMethod:'POST',
   body:JSON.stringify({
-    data:'test data'
+    name:'Rose'
   })
 }
 
@@ -14,7 +14,7 @@ const callBack = (error:any, result:APIGatewayProxyResult) => {
 }
 
 const testLambda = async () => {
-  console.log('testing lambda')
+  console.log('testing lambda => POST')
   const result  = await emiHandler(event,{} as any, callBack)
   console.log(result)
 }
